@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Cooking | Food | Recipes | Ingredients | About</title>
+
+    <style>
+
+.filterDiv {
+  float: left;
+  background-color: red;
+  color: #ffffff;
+  width: 200px;
+  line-height: 100px;
+  text-align: center;
+  margin: 2px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.container {
+  margin-top: 20px;
+  overflow: hidden;
+}
+input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: red;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+    input {
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+ 
+    </style>
+  
+
+
+  </head>
+
+<body>
+
+ <!-- Navbar -->
+ <nav>
+  <a href="#" class="logo"><span>Munchies</span></a>
+  <ul>
+      <li><a href="home.html">HOME</a></li>
+      <li><a href="categories.html"class="active">CATEGORIES</a></li>
+      <li><a href="custom.html">FOR STUDENTS</a></li>
+  </ul>
+</nav>
+
+ <br> <br> <br> <br> <br>
+ <br>
+<h2>Filter by Preference</h2>
+<br>
+
+<input type="radio" onclick="filterSelection('all')" name="category" checked> Show all
+<input type="radio" onclick="filterSelection('Vegan')" name="category"> Vegan
+<input type="radio" onclick="filterSelection('GlutenFree')" name="category"> Gluten Free
+<input type="radio" onclick="filterSelection('DairyFree')" name="category"> Dairy Free
+<input type="radio" onclick="filterSelection('NutFree')" name="category"> Nut Free
+<input type="radio" onclick="filterSelection('Halal')" name="category"> Halal
+<input type="radio" onclick="filterSelection('Kosher')" name="category"> Kosher
+<input type="radio" onclick="filterSelection('Breakfast')" name="category"> All Breakfast Items
+<input type="radio" onclick="filterSelection('Lunch')" name="category"> All Lunch Items
+<input type="radio" onclick="filterSelection('Dinner')" name="category"> All Dinner Items
+
+
+
+<div class="container">
+  <a href="zAvocadoMangoSalad.html"><div class="filterDiv Vegan Kosher Lunch">Avocado Mango Salad</div></a>
+  <a href="zFruitSmoothie.html"><div class="filterDiv Kosher Vegan DairyFree Breakfast">Fruit Smoothie</div></a>
+  <a href="zHoneyGarlicChicken.html"><div class="filterDiv Kosher Lunch ">Honey Garlic Chicken</div></a>
+  <a href="zTeriyakiSteak.html"><div class="filterDiv Kosher Dinner GlutenFree NutFree">Teriyaki Skirt Steak</div></a>
+  <a href="zTeriyakiSteak.html"><div class="filterDiv Breakfast NutFree">Quesadillas</div></a>
+  <a href="zGrilledSalmon.html"><div class="filterDiv Halal GlutenFree DairyFree Dinner">Grilled Salmon</div></a>
+  <a href="zDillPotatoes.html"><div class="filterDiv Vegan Halal Lunch NutFree">Ukranian Dill Potatoes</div></a>
+  <a href="zOatmeal.html"><div class="filterDiv Vegan Lunch Halal DairyFree NutFree">Chocolate PB Oatmeal</div></a>
+  <a href="zTofuScramble.html"><div class="filterDiv Vegan Breakfast DairyFree GlutenFree NutFree">Tofu Scramble</div></a>
+  <a href="zAvocadoScramble.html"><div class="filterDiv Breakfast DairyFree GlutenFree NutFree">Avocado Scramble</div></a>
+  <a href="zCajunShrimp.html"><div class="filterDiv Halal GlutenFree Lunch DairyFree NutFree">Cajun Shrimp Skillet</div></a>
+  <a href="zSalmonTikka.html"><div class="filterDiv Halal GlutenFree Dinner">Salmon Tikka Masala</div></a>
+ 
+</div>
+
+<script>
+
+  filterSelection("all")
+  function filterSelection(c) {
+    var x, i;
+    x = document.getElementsByClassName("filterDiv");
+    if (c == "all") c = "";
+    for (i = 0; i < x.length; i++) {
+      w3RemoveClass(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    }
+  }
+  
+  function w3AddClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+    }
+  }
+  
+  function w3RemoveClass(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);     
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+  
+    </script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+ 
+ <!-- Footer -->
+ <footer>
+  <p>&copy; CopyRight 2021 | <span>Munchies</span></p>
+</footer>
+</body>
+</html>
